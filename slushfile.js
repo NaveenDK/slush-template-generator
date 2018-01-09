@@ -55,32 +55,22 @@ gulp.task('default', function (done) {
         name: 'appName',
         message: 'What is the name of your project?',
         default: defaults.appName
-    }, {
-        name: 'appDescription',
-        message: 'What is the description?'
-    }, {
-        name: 'appVersion',
-        message: 'What is the version of your project?',
-        default: '0.1.0'
-    }, {
-        name: 'authorName',
-        message: 'What is the author name?',
-        default: defaults.authorName
-    }, {
-        name: 'authorEmail',
-        message: 'What is the author email?',
-        default: defaults.authorEmail
-    }, {
-        name: 'userName',
-        message: 'What is the github username?',
-        default: defaults.userName
     }, 
     {
-        name: 'myIndexTitle',
-        message:'What is the index title?',
-     //   default:defaults.myIndexTitle
+        name: 'webURI',
+        message:'what is the url?'
 
     },
+   {
+       name:'webTitle',
+       message: 'what is the title?'
+   },
+   {
+    name: 'appDescription',
+    message:'what is the description?'
+
+},
+
     {
         type: 'confirm',
         name: 'moveon',
@@ -103,7 +93,7 @@ gulp.task('default', function (done) {
                 }))
                 .pipe(conflict('./'))
                 .pipe(gulp.dest('./'))
-                .pipe(install())
+                //.pipe(install())
                 .on('end', function () {
                     done();
                 });
