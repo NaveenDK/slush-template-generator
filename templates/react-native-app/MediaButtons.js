@@ -63,11 +63,13 @@ render() {
                 return;
               }
             
+             
               let localUri = result.uri;
               let filename = localUri.split('/').pop();
-      
+             
               let match = /\.(\w+)$/.exec(filename);
-              let type = match ? `image/${match[1]}` : `image`;
+              let type = match ? 'image/'+match[1] : 'image';
+    
       
     
             let formData = new FormData();
